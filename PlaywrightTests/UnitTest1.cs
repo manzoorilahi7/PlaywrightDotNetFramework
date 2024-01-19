@@ -1,4 +1,5 @@
 using Microsoft.Playwright;
+using System.Runtime.InteropServices;
 
 namespace PlaywrightTests
 {
@@ -111,5 +112,36 @@ namespace PlaywrightTests
         }
         #endregion
 
+        [Test]
+        public async Task TraceTC()
+        {
+            var playwright = await Playwright.CreateAsync();
+            var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false, SlowMo = 1});
+            var context = await browser.NewContextAsync();
+
+            await context.Tracing.StartAsync(new() 
+            {
+                Screenshots = true,
+                Snapshots = true,
+                Sources = true
+            });
+
+            var page = await browser.NewPageAsync();
+            await page.SetViewportSizeAsync(1920, 1080);
+
+            await page.GotoAsync("https://demo.spreecommerce.org/login");
+            await page.FillAsync("#spree_user_email", "manzoorchamp91@gmail.com");
+            await page.FillAsync("#spree_user_password", "shopping123");
+            //await page.GetByRole(AriaRole.Button, new() { Name = "commit" }).ClickAsync();
+
+
+            await context.Tracing.StopAsync(new()
+            {
+                Path = "Trace/trace.zip"
+            });
+
+            await context.CloseAsync();
+            await browser.CloseAsync();
+        }
     }
 }
