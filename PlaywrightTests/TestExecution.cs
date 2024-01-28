@@ -1,4 +1,7 @@
-﻿using Microsoft.Playwright.NUnit;
+﻿using Allure.Net.Commons;
+using Microsoft.Playwright.NUnit;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using PlaywrightTests.POM;
 using System;
 using System.Collections.Generic;
@@ -9,9 +12,12 @@ using System.Threading.Tasks;
 namespace PlaywrightTests
 {
     [TestFixture]
+    [AllureNUnit]
     public class TestExecution : PageTest
     {
-        [Test]
+        [AllureStep("Logging in and verifying if successfully logged in")]
+        [AllureOwner("Manzoor E Ilahi")]
+        [Test]       
         public async Task LoginUsingPOMTest()
         {
             LoginPage loginPage = new LoginPage(Page);
@@ -22,6 +28,8 @@ namespace PlaywrightTests
         }
 
         [Test]
+        [AllureStep]
+        [AllureOwner("Manzoor E Ilahi")]
         public async Task AddNewAddressTest()
         {
             LoginPage loginPage = new LoginPage(Page);
@@ -36,6 +44,15 @@ namespace PlaywrightTests
         }
 
         [Test]
+        [AllureStep]
+        [AllureDescription("This test case navigates to the cart page and clicks on checkout.")]
+        [AllureOwner("Manzoor E Ilahi")]
+        [AllureTag("SmokeTest", "Regression")]
+        [Category("Cart")]
+        [AllureSuite("Smoke test Suite")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureLink("Application under test: ", "https://demo.spreecommerce.org/")]
+        [AllureLink("Test case developed by: Manzoor", "https://github.com/manzoorilahi7")]
         public async Task CartNavigationTest()
         {
             LoginPage loginPage = new LoginPage(Page);

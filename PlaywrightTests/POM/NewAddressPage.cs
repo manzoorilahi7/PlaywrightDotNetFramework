@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,7 @@ namespace PlaywrightTests.POM
 
         }
 
+        [AllureStep()]
         public async Task AddNewAddress(string uniqueAddrName, string firstName, string lastName, string address, string city, string country, string zipCode, string state, string phone)
         {
             await _uniqueAddressNameField.FillAsync(uniqueAddrName);

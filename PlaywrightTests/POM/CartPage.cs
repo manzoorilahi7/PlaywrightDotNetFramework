@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,13 @@ namespace PlaywrightTests.POM
             _checkoutBtn = _page.Locator("#checkout-link");
         }
 
+        [AllureStep]
         public async Task AddPromoCode(string promoCode)
         {
             await _promocodeTxtBox.FillAsync(promoCode);
         }
 
+        [AllureStep]
         public async Task ProceedToCheckOut()
         {
             await _checkoutBtn.ClickAsync();

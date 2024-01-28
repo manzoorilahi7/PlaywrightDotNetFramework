@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightTests", "PlaywrightTests\PlaywrightTests.csproj", "{1F5B9D94-52C1-478D-B56B-B1DD7F0D3F61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrightTests", "PlaywrightTests\PlaywrightTests.csproj", "{1F5B9D94-52C1-478D-B56B-B1DD7F0D3F61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGenUtil", "Utilities\CodeGenUtil\CodeGenUtil.csproj", "{6566E55D-D8C5-443F-8A93-929DDDC72DB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1F5B9D94-52C1-478D-B56B-B1DD7F0D3F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F5B9D94-52C1-478D-B56B-B1DD7F0D3F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5B9D94-52C1-478D-B56B-B1DD7F0D3F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6566E55D-D8C5-443F-8A93-929DDDC72DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6566E55D-D8C5-443F-8A93-929DDDC72DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6566E55D-D8C5-443F-8A93-929DDDC72DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6566E55D-D8C5-443F-8A93-929DDDC72DB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
