@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace PlaywrightTests
 {
-    public class Tests
+    public class Tests_NoPageTestUse
     {
 
         [Test]
